@@ -17,7 +17,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         WebSocketHandShake  handshakeInterceptor = new WebSocketHandShake();
 
-        registry.addHandler(signalingHandler, "")
+        registry.addHandler(signalingHandler, "/signal")
                 .setHandshakeHandler(new DefaultHandshakeHandler())
                 .addInterceptors(handshakeInterceptor)
                 .setAllowedOrigins("*");
