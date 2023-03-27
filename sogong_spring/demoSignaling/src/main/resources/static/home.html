@@ -2,25 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>signaling</title>
+    <title>WebRTC Demo</title>
 </head>
 <body>
-<h1>웹 소켓 연결</h1>
-<h2>로그 는 콘솔에서 찍어보슈...</h2>
-
-<div class="flexChild" id="camera-container">
-    <div class="camera-box">
-        <video id="remote_video" autoplay>
-            <h3>남꺼 영상</h3>
-        </video>
-        <audio id="remote_audio">남꺼 음향</audio>
-        <video id="local_video" autoplay muted>
-            <h3>내꺼 영상</h3>
-        </video>
-        <audio id="local_audio">내꺼 음향</audio>
-    </div>
+<h1>WebRTC Demo</h1>
+<form>
+    <label for="roomId">Room ID:</label>
+    <input type="text" id="roomId" name="roomId"><br>
+    <label for="userId">User ID:</label>
+    <input type="text" id="userId" name="userId"><br>
+    <button id="joinBtn" type="button">Join Room</button>
+</form>
+<hr>
+<h2>Messages</h2>
+<ul id="message-list"></ul>
+<hr>
+<form>
+    <label for="message">Message:</label>
+    <input type="text" id="message" name="message"><br>
+    <button id="sendBtn" type="button">Send</button>
+</form>
+<hr>
+<h2>Video Chat</h2>
+<div>
+    <video id="localVideo" width="320" height="240" autoplay playsinline></video>
+    <video id="remoteVideo" width="320" height="240" autoplay playsinline></video>
 </div>
-
 </body>
 <script src="signal.js"></script>
 </html>
